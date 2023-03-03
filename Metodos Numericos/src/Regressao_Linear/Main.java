@@ -4,20 +4,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int op;
-        Coordenada coordenada = new Coordenada();
-        Regressao regressao = new Regressao();
-        do {
-            menu();
-            op = in.nextInt();
-            switch (op) {
-                case 1:
-                    coordenada.dados();
-                    regressao.B();
-
-            }
-        } while ( op != 2);
+        double[] meses = {1, 2, 3, 4, 5};
+        double[] altura = {2, 4, 6, 8, 10};
+        RegressaoLinear regressaoLinear = new RegressaoLinear(meses, altura);
+        System.out.println("Yi = "+regressaoLinear.Yi(2));
     }
 
 }
