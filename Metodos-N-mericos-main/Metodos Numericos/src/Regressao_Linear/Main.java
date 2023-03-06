@@ -2,38 +2,10 @@ package Regressao_Linear;
 
 public class Main {
     public static void main(String[] args) {
-        int[] meses = {1, 2, 3, 4, 5}; //meses da criança
-        double[] altura = {2, 4, 6, 8, 10}; //altura em cm
-        int i;
-        int aux;
+        int[] meses = {18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29}; //meses da criança
+        double[] altura = {76.1, 77, 78.1, 78.2, 78.8, 79.7, 79.9, 81.1, 81.2, 81.8, 82.8, 83.5}; //altura em cm
 
-        for (i = 0; i < meses.length; i++) {
-            for (int j = 0; j < 4; j++) {
-                if (meses[j] > meses[j + 1]) {
-                    aux = meses[j];
-                    meses[j] = meses[j + 1];
-                    meses[j + 1] = aux;
-                }
-            }
-            for (i = 0; i < altura.length; i++) {
-                for (int j = 0; j < 4; j++) {
-                    if (altura[j] > altura[j + 1]) {
-                        aux = (int) altura[j];
-                        altura[j] = altura[j + 1];
-                        meses[j + 1] = aux;
-                    }
-                }
-            }
-            System.out.println("Meses:");
-            for (i = 0; i < meses.length; i++) {
-                System.out.println(meses[i]);
-            }
-            System.out.println("Altura");
-            for (i = 0; i < altura.length; i++) {
-                System.out.println(+altura[i]);
-                }
-            }
-            RegressaoLinear regressaoLinear = new RegressaoLinear(meses, altura);
-            System.out.println("Yi = " + regressaoLinear.Yi(2));
-            }
-        }
+        RegressaoLinear regressaoLinear = new RegressaoLinear(meses, altura);
+        System.out.println("Yi = " + regressaoLinear.Yi(2));
+    }
+}

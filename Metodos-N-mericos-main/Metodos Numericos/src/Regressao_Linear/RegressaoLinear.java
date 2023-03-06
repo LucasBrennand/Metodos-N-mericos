@@ -7,6 +7,7 @@ public class RegressaoLinear {
         private double[] y;
         private double B1;
         private double B0;
+        private double R;
         private double R2;
 
         public RegressaoLinear(int[] x, double[] y) {
@@ -33,8 +34,11 @@ public class RegressaoLinear {
             B1 = ((n * XY) - (X * Y)) / (((n * X2) - Math.pow(X, 2)));
             System.out.println("B1 = "+B1+" (Coeficiente Angular)");
             B0 = (Y - B1 * X) / n;
+            R = ((n * XY) - (X * Y)) / (Math.sqrt((n * X2 - Math.pow(X, 2))) * Math.sqrt(n * Y2 - Math.pow(Y, 2)));
+            R2 = Math.pow(R, 2);
             System.out.println("B0 = "+B0+" (Intercepto)");
-            System.out.println("R2 = "+R2+" (Coeficiente de Determinação");
+            System.out.println("R = "+R+" (Coeficiente de Correlação)");
+            System.out.println("R2 = "+R2+" (Coeficiente de Determinação)");
         }
         public double Yi(double x) {
             System.out.println("Yi = "+B0+" + "+B1+" * X (Equação da reta)");
